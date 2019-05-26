@@ -13,7 +13,7 @@ namespace Synchronisys_mvc.Controllers
         clsDatabase lobjDatabase = new clsDatabase();
         // GET: User list
         public HttpResponseMessage GET(int Page = 1)
-        {
+        { 
             Page = Page == 0 ? 1 : Page;
             mdlUser user = new mdlUser();
             user.page = Page;
