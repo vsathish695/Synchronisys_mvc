@@ -5,15 +5,18 @@ using System.Web.Http;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity;
+using Synchronisys_mvc.FIlters;
+using System;
 
 namespace Synchronisys_mvc.Controllers
 {
+    [CustomExceptionFilter]
     public class UserController : ApiController
     {
         clsDatabase lobjDatabase = new clsDatabase();
         // GET: User list
         public HttpResponseMessage GET(int Page = 1)
-        { 
+        {
             Page = Page == 0 ? 1 : Page;
             mdlUser user = new mdlUser();
             user.page = Page;
